@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import './timer.css';
+import styles from './timer.module.css';
 
 function Timer () {
   const [seconds, setSeconds] = useState(0);
@@ -33,11 +33,11 @@ function Timer () {
 
     
     return (
-      <div className='container'>
-        <h1 className='h1Time'>{minutes<10? '0'+minutes: minutes}:{seconds<10? '0'+seconds: seconds}</h1>
+      <div className={styles.container}>
+        <h1 className={styles.h1Time}>{minutes<10? '0'+minutes: minutes}:{seconds<10? '0'+seconds: seconds}</h1>
         <div>
-          <button className='btn' onClick={restart}>Restart</button>
-          <button className='btn' onClick={stop}>Stop</button>
+          <button className={styles.btn} onClick={restart}>Restart</button>
+          <button className={styles.btn} onClick={stop}>Stop</button>
         </div>
       </div>
     );
